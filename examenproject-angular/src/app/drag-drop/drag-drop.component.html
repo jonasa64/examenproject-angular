@@ -3,6 +3,12 @@
   <p>In this drag and drop game can you learn about the climate. You task is to drag the items to the right container. If you try put a item there belong to the solution container into the consequences it will allow you to do it</p>
 </div>
 
+<div>
+  <countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
+  <button (click)="startTime()">Start time</button>
+  <button (click)="pauseTimer()">Pause time</button>
+  <button (click)="reset()">Reset</button>
+</div>
 
 <div class="flex">
   <div>
@@ -63,4 +69,4 @@
   </div>
 </div>
 
-<button (click)="reset()">Reset</button>
+

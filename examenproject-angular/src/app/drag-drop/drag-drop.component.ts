@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
+import { countUpTimerConfigModel, timerTexts, CountupTimerService } from 'ngx-timer';
 
 @Component({
   selector: 'app-drag-drop',
@@ -25,9 +26,23 @@ export class DragDropComponent implements OnInit {
 
   consequences = [];
 
-  constructor() { }
+  testConfig;
+
+  constructor(private countUpTimer: CountupTimerService) { }
 
   ngOnInit(): void {
+
+    // countUpTimerConfigModel
+    this.testConfig = new countUpTimerConfigModel();
+
+    // custom class
+    this.testConfig.timerClass  = 'test_Timer_class';
+
+    // timer text values
+    this.testConfig.timerTexts = new timerTexts();
+    this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
+    this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm
+    this.testConfig.timerTexts.secondsText = 'Seconds'; // default - ss
   }
 
   // tslint:disable-next-line:ban-types
@@ -41,6 +56,14 @@ export class DragDropComponent implements OnInit {
 
   reset() {
     return window.location.reload();
+  }
+
+  startTime() {
+    return this.countUpTimer.startTimer();
+  }
+
+  pauseTimer() {
+    return this.countUpTimer.pauseTimer();
   }
 
 }

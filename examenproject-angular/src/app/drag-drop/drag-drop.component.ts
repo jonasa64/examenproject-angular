@@ -30,12 +30,17 @@ export class DragDropComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:ban-types
   drop(event: CdkDragDrop<String[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
     }
+  }
+
+  reset() {
+    return window.location.reload();
   }
 
 }

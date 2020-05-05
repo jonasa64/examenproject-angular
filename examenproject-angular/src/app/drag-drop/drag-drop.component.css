@@ -1,9 +1,24 @@
-xample-container {
+example-container {
   width: 400px;
   max-width: 100%;
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button{
+  margin-top: 50px;
+  padding: 20px 70px 20px 70px;
+  background: green;
+  border: none;
+  font-size: 20px;
+  position: relative;
+  left: 700px;
 }
 
 .example-list {

@@ -1,27 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {NgxTimerModule} from 'ngx-timer';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< Updated upstream
-
-@NgModule({
-  declarations: [
-    AppComponent
-=======
 import { DragDropComponent } from './drag-drop/drag-drop.component';
-import { MemoryGameComponent } from './memory-game/memory-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DragDropComponent,
-    MemoryGameComponent
->>>>>>> Stashed changes
+    DragDropComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule,
+    NgxTimerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

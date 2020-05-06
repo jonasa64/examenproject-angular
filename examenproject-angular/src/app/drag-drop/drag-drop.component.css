@@ -11,15 +11,30 @@ example-container {
   justify-content: space-evenly;
 }
 
+countup-timer{
+  text-align: center;
+}
+
 button{
   margin-top: 50px;
   margin-right: 10px;
   padding: 20px 70px 20px 70px;
-  background: green;
   border: none;
   font-size: 20px;
   position: relative;
   left: 450px;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.green{
+  background: green;
+}
+
+.red {
+  background-color: red;
 }
 
 .example-list {

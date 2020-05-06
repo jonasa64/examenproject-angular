@@ -5,9 +5,9 @@
 
 <div>
   <countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
-  <button (click)="startTime()">Start time</button>
-  <button (click)="pauseTimer()">Pause time</button>
-  <button (click)="reset()">Reset</button>
+  <button class="green" (click)="startTime()">Start time</button>
+  <button class="yellow" (click)="pauseTimer()">Pause time</button>
+  <button class="red" (click)="reset()">Reset game</button>
 </div>
 
 <div class="flex">

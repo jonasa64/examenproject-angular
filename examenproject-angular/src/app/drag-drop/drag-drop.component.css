@@ -13,6 +13,7 @@ example-container {
 
 countup-timer{
   text-align: center;
+  font-weight: bold;
 }
 
 button{

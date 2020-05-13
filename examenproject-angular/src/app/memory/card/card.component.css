@@ -1,7 +1,9 @@
 .board {
   display: flex;
 }
-
+.blue{
+  background-color: blue;
+}
 .scene {
   width: 100px;
   height: 150px;
@@ -39,9 +41,23 @@
   transform: rotateY(-180deg);
 }
 
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
 .card-face-back {
+  margin-top: 20px;
   background: blue;
 }
+
+.top{
+  margin-top: 170px;
+}
+
 
 .card-face img {
   width: 80%;

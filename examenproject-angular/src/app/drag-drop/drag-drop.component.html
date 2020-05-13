@@ -22,7 +22,7 @@
            class="example-list"
       >
 
-          <div *ngFor="let item of itemsSolutions" cdkDrag class="example-box">{{item}}</div>
+          <div *ngFor="let item of itemsSolutions" cdkDrag class="example-box">{{item.question}}</div>
           <div
             cdkDropList
           #itemsConsequencesList="cdkDropList"
@@ -31,7 +31,7 @@
           (cdkDropListDropped)="drop($event)"
            class="example-list"
           >
-          <div *ngFor="let item of itemConsequences" cdkDrag class="example-box">{{item}}</div>
+          <div *ngFor="let item of itemConsequences" cdkDrag class="example-box">{{item.question}}</div>
           </div>
       </div>
   </div>

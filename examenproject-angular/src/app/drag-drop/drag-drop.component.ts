@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { countUpTimerConfigModel, timerTexts, CountupTimerService } from 'ngx-timer';
+import { DragAndDropService } from '../services/drag-and-drop.service';
+import { DragAndDrop } from './drag-drop'
 
 @Component({
   selector: 'app-drag-drop',
@@ -10,16 +12,10 @@ import { countUpTimerConfigModel, timerTexts, CountupTimerService } from 'ngx-ti
 export class DragDropComponent implements OnInit {
 
 
-  itemsSolutions = [
-    'Save on your electricity and heat consumption',
-    'Planting of forest',
-    'Take the bike or public transport'
-  ];
+  itemsSolutions = [];
 
   itemConsequences = [
-    'Southern and Central Europe are seeing more heat waves, forest fires and droughts',
-    'Northern Europe is getting significantly wetter and it can become common with winter floods.',
-    'the concentration of CO2 in the atmosphere had risen steadily 285 ppm before industrialization in 1750 to 410 ppm today.'
+
   ];
 
   solutions = [];
@@ -28,7 +24,7 @@ export class DragDropComponent implements OnInit {
 
   testConfig;
 
-  constructor(private countUpTimer: CountupTimerService) { }
+  constructor(private countUpTimer: CountupTimerService, private dragAndDrop: DragAndDropService) { }
 
   ngOnInit(): void {
 
@@ -36,13 +32,21 @@ export class DragDropComponent implements OnInit {
     this.testConfig = new countUpTimerConfigModel();
 
     // custom class
-    this.testConfig.timerClass  = 'test_Timer_class';
+    this.testConfig.timerClass = 'test_Timer_class';
 
     // timer text values
     this.testConfig.timerTexts = new timerTexts();
     this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
     this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm
     this.testConfig.timerTexts.secondsText = 'Seconds'; // default - ss
+
+    this.dragAndDrop.getAllDragAndDrops().subscribe((data: DragAndDrop[]) => {
+      this.itemsSolutions = data.filter(el => el.type === 'solution');
+      this.itemConsequences = data.filter(el => el.type === 'consequence');
+    }, error => {
+      console.log(error);
+    })
+
   }
 
   // tslint:disable-next-line:ban-types

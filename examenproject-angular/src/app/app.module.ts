@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragAndDropService } from '../app/services/drag-and-drop.service';
+import { QuizService } from './services/quiz.service';
 import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
@@ -25,7 +26,7 @@ import { QuizComponent } from './quiz/quiz.component';
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [DragAndDropService],
+  providers: [DragAndDropService, QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

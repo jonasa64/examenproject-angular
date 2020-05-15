@@ -1,0 +1,17 @@
+h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    border: black solid 1px;
+}
+
+.isCorrect{
+    background-color: green;
+}
+
+
+

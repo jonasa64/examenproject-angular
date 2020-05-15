@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragAndDropService } from '../app/services/drag-and-drop.service';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragDropComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,7 @@
   margin-right: auto;
   left: 0;
   right: 0;
-  max-width: 40%;
+  max-width: 35%;
   top: 20rem;
 }
 
@@ -55,4 +55,9 @@
 
 .instructions {
   margin-top: 1rem !important;
+}
+
+p {
+  width: 20rem;
+  margin: 0 auto !important;
 }

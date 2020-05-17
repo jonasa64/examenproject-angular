@@ -15,9 +15,9 @@ p.size {
 
 .mat-toolbar {
   background-color: #4b8b3b;
-  margin-top: 3rem;
+  margin-top: -5rem;
   color: white;
-  height: 8.36rem;
+  height: 10rem;
   justify-content: center;
 }
 

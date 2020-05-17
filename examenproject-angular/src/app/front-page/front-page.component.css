@@ -1,0 +1,63 @@
+.text-in-img {
+  overflow: hidden;
+  position: relative;
+}
+
+.trees {
+  position: relative;
+  max-width: 100%;
+  opacity: 0.7;
+}
+
+.img-header {
+  position: absolute;
+  top: 11rem;
+  font-size: 3rem;
+  color: white;
+  text-shadow: black 1px 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.action_box {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  max-width: 35%;
+  top: 20rem;
+}
+
+.green {
+  color: #4b8b3b;
+}
+
+.mat-card-actions {
+  text-align: center;
+}
+
+.mat-focus-indicator.mat-raised-button.mat-button-base {
+  background: #4b8b3b;
+  color: white;
+}
+
+.mat-card.mat-focus-indicator.example-card {
+  text-align: center;
+  height: 14rem;
+}
+
+.instructions {
+  margin-top: 1rem !important;
+}
+
+p {
+  width: 20rem;
+  margin: 0 auto !important;
+}

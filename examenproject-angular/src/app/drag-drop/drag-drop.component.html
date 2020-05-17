@@ -1,72 +1,66 @@
 <div>
-  <h2>Rules</h2>
-  <p>In this drag and drop game can you learn about the climate. You task is to drag the items to the right container. If you try put a item there belong to the solution container into the consequences it will allow you to do it</p>
+  <h1 class="header">"Drag and drop"</h1>
+
+  <div class="box">
+    <div class="left-box">
+      <mat-card class="example-card">
+        <h1 class="instructions">Here's the rules</h1>
+        <mat-card-content>
+          <p>
+            In this drag and drop game can you learn about the climate. You task is to drag the items to the right
+            container.
+            If you try put a item there belong to the solution container into the consequences it will allow you to do
+            it.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="right-box">
+      <mat-card class="example-card">
+        <mat-card-content>
+          <countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
+          <button mat-button class="green" (click)="startTime()">Start time</button>
+          <button mat-button class="yellow" (click)="pauseTimer()">Pause time</button>
+          <button mat-button class="red" (click)="reset()">Reset game</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
 
-<div>
-  <countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
-  <button mat-button class="green" (click)="startTime()">Start time</button>
-  <button mat-button class="yellow" (click)="pauseTimer()">Pause time</button>
-  <button mat-button class="red" (click)="reset()">Reset game</button>
-</div>
+<br><br><br><br>
 
 <div class="flex">
   <div class="test">
-       <h2>Items to drag</h2>
-      <div
-          cdkDropList
-          #itemsSolutionsList="cdkDropList"
-          [cdkDropListData]="itemsSolutions"
-          [cdkDropListConnectedTo]="[solutionsList]"
-          (cdkDropListDropped)="drop($event)"
-           class="example-list"
-      >
+    <h2>Statements</h2>
+    <div cdkDropList #itemsSolutionsList="cdkDropList" [cdkDropListData]="itemsSolutions"
+      [cdkDropListConnectedTo]="[solutionsList]" (cdkDropListDropped)="drop($event)" class="example-list">
 
-          <div *ngFor="let item of itemsSolutions" cdkDrag class="example-box">{{item.question}}</div>
-          <div
-            cdkDropList
-          #itemsConsequencesList="cdkDropList"
-          [cdkDropListData]="itemConsequences"
-          [cdkDropListConnectedTo]="[ConsequencesList]"
-          (cdkDropListDropped)="drop($event)"
-           class="example-list"
-          >
-          <div *ngFor="let item of itemConsequences" cdkDrag class="example-box">{{item.question}}</div>
-          </div>
+      <div *ngFor="let item of itemsSolutions" cdkDrag class="example-box">{{item.question}}</div>
+      <div cdkDropList #itemsConsequencesList="cdkDropList" [cdkDropListData]="itemConsequences"
+        [cdkDropListConnectedTo]="[ConsequencesList]" (cdkDropListDropped)="drop($event)" class="example-list">
+        <div *ngFor="let item of itemConsequences" cdkDrag class="example-box">{{item.question}}</div>
       </div>
+    </div>
   </div>
 
-  <div class="test left" >
-      <h2>Solutions for the climate</h2>
-      <div
-        cdkDropList
-          #solutionsList="cdkDropList"
-          [cdkDropListData]="solutions"
-          [cdkDropListConnectedTo]="[itemsSolutionsList]"
-          (cdkDropListDropped)="drop($event)"
-           class="example-list"
+  <div class="test left">
+    <h2>Solutions for the climate</h2>
+    <div cdkDropList #solutionsList="cdkDropList" [cdkDropListData]="solutions"
+      [cdkDropListConnectedTo]="[itemsSolutionsList]" (cdkDropListDropped)="drop($event)" class="example-list">
 
-      >
-
-          <div *ngFor="let item of solutions" class="example-box">{{item}}</div>
-      </div>
+      <div *ngFor="let item of solutions" class="example-box">{{item}}</div>
+    </div>
   </div>
 
-  <div class="test left" >
-      <h2>Consequences by the climate changes</h2>
-      <div
-      cdkDropList
-          #ConsequencesList="cdkDropList"
-          [cdkDropListData]="consequences"
-          [cdkDropListConnectedTo]="[itemsConsequencesList]"
-          (cdkDropListDropped)="drop($event)"
-           class="example-list"
-      >
+  <div class="test left">
+    <h2>Consequences by the climate changes</h2>
+    <div cdkDropList #ConsequencesList="cdkDropList" [cdkDropListData]="consequences"
+      [cdkDropListConnectedTo]="[itemsConsequencesList]" (cdkDropListDropped)="drop($event)" class="example-list">
 
-          <div *ngFor="let item of consequences " class="example-box">{{item}}</div>
-      </div>
+      <div *ngFor="let item of consequences " class="example-box">{{item}}</div>
+    </div>
 
   </div>
 </div>
-
-

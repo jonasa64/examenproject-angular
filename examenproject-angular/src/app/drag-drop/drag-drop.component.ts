@@ -3,6 +3,7 @@ import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/dr
 import { countUpTimerConfigModel, timerTexts, CountupTimerService } from 'ngx-timer';
 import { DragAndDropService } from '../services/drag-and-drop.service';
 import { DragAndDrop } from './drag-drop'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drag-drop',
@@ -24,7 +25,7 @@ export class DragDropComponent implements OnInit {
 
   testConfig;
 
-  constructor(private countUpTimer: CountupTimerService, private dragAndDrop: DragAndDropService) { }
+  constructor(private countUpTimer: CountupTimerService, private dragAndDrop: DragAndDropService, private router: Router) { }
 
   ngOnInit(): void {
 

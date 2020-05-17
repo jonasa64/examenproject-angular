@@ -34,6 +34,10 @@ export class NavbarComponent {
       this.router.navigate(['/quiz']);
     }
 
+    if (destination == 'merch') {
+      this.router.navigate(['/merch']);
+    }
+
     if (destination == 'cart') {
       this.router.navigate(['/cart']);
     }

@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatCardModule, MatCard } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router'; 
+import { MatListModule } from '@angular/material/list'; 
 
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
@@ -19,6 +20,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
+import { MerchComponent } from './merch/merch.component';
 
 
 @NgModule({
@@ -29,8 +31,10 @@ import { CartComponent } from './cart/cart.component';
     FrontPageComponent,
     NavbarComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    MerchComponent  
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,10 +45,12 @@ import { CartComponent } from './cart/cart.component';
     MatToolbarModule,
     MatCardModule,
     HttpClientModule,
+    MatListModule,
     RouterModule.forRoot([  
     { path: '', component: FrontPageComponent},
     { path: 'dragdrop', component: DragDropComponent},
     { path: 'quiz', component: QuizComponent},
+    { path: 'merch', component: MerchComponent},
     { path: 'cart', component: CartComponent},
     { path: '**', redirectTo: 'home' }])
   ],

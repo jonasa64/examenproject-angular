@@ -8,8 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatCardModule, MatCard } from '@angular/material/card';
-import { RouterModule, Routes } from '@angular/router'; 
 import { MatListModule } from '@angular/material/list'; 
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
@@ -21,7 +22,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
-
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { MerchComponent } from './merch/merch.component';
   ],
 
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     DragDropModule,
@@ -45,14 +46,7 @@ import { MerchComponent } from './merch/merch.component';
     MatToolbarModule,
     MatCardModule,
     HttpClientModule,
-    MatListModule,
-    RouterModule.forRoot([  
-    { path: '', component: FrontPageComponent},
-    { path: 'dragdrop', component: DragDropComponent},
-    { path: 'quiz', component: QuizComponent},
-    { path: 'merch', component: MerchComponent},
-    { path: 'cart', component: CartComponent},
-    { path: '**', redirectTo: 'home' }])
+    MatListModule
   ],
   providers: [DragAndDropService, QuizService],
   bootstrap: [AppComponent]

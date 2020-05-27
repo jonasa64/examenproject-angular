@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MerchService } from '../services/merch.service';
+import { Merch } from './merch';
 
 @Component({
   selector: 'app-merch',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerchComponent implements OnInit {
 
-  constructor() { }
+  merchs: any;
+
+  constructor(private merchService: MerchService) { }
 
   ngOnInit(): void {
+
+    this.merchService.getAllShirts().subscribe((data: Merch[]) => {
+      console.log(data)
+      this.merchs = data;
+    }, error => {
+      console.log(error);
+    })
+
   }
 
 }

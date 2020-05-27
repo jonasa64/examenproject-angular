@@ -22,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MerchComponent } from './merch/merch.component';
     NavbarComponent,
     FooterComponent,
     CartComponent,
-    MerchComponent  
+    MerchComponent,
+    ConfirmationComponent  
   ],
 
   imports: [

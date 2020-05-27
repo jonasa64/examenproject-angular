@@ -7,6 +7,7 @@ import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent},
   { path: 'merch', component: MerchComponent},
   { path: 'cart', component: CartComponent},
+  { path: 'confirmation', component: ConfirmationComponent},
   { path: '**', redirectTo: '' }
 ];
 

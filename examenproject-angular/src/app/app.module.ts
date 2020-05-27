@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxTimerModule } from 'ngx-timer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule, MatCard } from '@angular/material/card';
-import { RouterModule, Routes } from '@angular/router'; 
-import { MatListModule } from '@angular/material/list'; 
+import { RouterModule, Routes } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
+import { MerchService } from './services/merch.service'
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { MerchComponent } from './merch/merch.component';
     NavbarComponent,
     FooterComponent,
     CartComponent,
-    MerchComponent  
+    MerchComponent
   ],
 
   imports: [
@@ -46,15 +47,15 @@ import { MerchComponent } from './merch/merch.component';
     MatCardModule,
     HttpClientModule,
     MatListModule,
-    RouterModule.forRoot([  
-    { path: '', component: FrontPageComponent},
-    { path: 'dragdrop', component: DragDropComponent},
-    { path: 'quiz', component: QuizComponent},
-    { path: 'merch', component: MerchComponent},
-    { path: 'cart', component: CartComponent},
-    { path: '**', redirectTo: 'home' }])
+    RouterModule.forRoot([
+      { path: '', component: FrontPageComponent },
+      { path: 'dragdrop', component: DragDropComponent },
+      { path: 'quiz', component: QuizComponent },
+      { path: 'merch', component: MerchComponent },
+      { path: 'cart', component: CartComponent },
+      { path: '**', redirectTo: 'home' }])
   ],
-  providers: [DragAndDropService, QuizService],
+  providers: [DragAndDropService, QuizService, MerchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

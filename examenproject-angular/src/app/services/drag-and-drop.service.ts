@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http'
 @Injectable()
 
 export class DragAndDropService {
-    baseUrl = 'http://localhost:3000/dragDrop';
+    baseUrl = 'https://exam-backend-web.herokuapp.com/dragDrop';
 
     constructor(private http: HttpClient) { }
 

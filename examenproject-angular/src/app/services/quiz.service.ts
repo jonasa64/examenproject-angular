@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class QuizService {
 
-    baseUrl = 'http://localhost:3000/quiz';
+    baseUrl = 'https://exam-backend-web.herokuapp.com/quiz';
 
     constructor(private http: HttpClient) { }
 

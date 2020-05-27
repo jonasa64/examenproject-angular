@@ -26,11 +26,9 @@ export class QuizComponent implements OnInit {
 
   clickAnswer(answer) {
     if (answer.isCorrect) {
-      //alert('answer is correct');
       this.clickUsed++;
       this.score.push(this.clickUsed);
       this.clickUsed = 0;
-      console.log(this.clickUsed);
     } else {
       this.clickUsed++;
     }

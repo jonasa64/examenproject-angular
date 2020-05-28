@@ -38,7 +38,7 @@ import { MerchService } from './services/merch.service'
     FooterComponent,
     CartComponent,
     MerchComponent,
-    ConfirmationComponent  
+    ConfirmationComponent,
     MerchComponent
 
   ],

@@ -11,6 +11,9 @@ import { MatCardModule, MatCard } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DragAndDropService } from '../app/services/drag-and-drop.service';
@@ -21,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MerchService } from './services/merch.service'
 
 
@@ -33,10 +37,14 @@ import { MerchService } from './services/merch.service'
     NavbarComponent,
     FooterComponent,
     CartComponent,
+    MerchComponent,
+    ConfirmationComponent  
     MerchComponent
+
   ],
 
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     DragDropModule,
@@ -54,6 +62,7 @@ import { MerchService } from './services/merch.service'
       { path: 'merch', component: MerchComponent },
       { path: 'cart', component: CartComponent },
       { path: '**', redirectTo: 'home' }])
+
   ],
   providers: [DragAndDropService, QuizService, MerchService],
   bootstrap: [AppComponent]

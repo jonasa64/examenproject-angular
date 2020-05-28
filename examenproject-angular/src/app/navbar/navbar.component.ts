@@ -21,25 +21,26 @@ export class NavbarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
 
-  navigate(destination: string) {
-    if (destination == '') {
-      this.router.navigate(['']);
-    }
+  navigateTo(route: string) {
+    // if (destination == '') {
+    //   this.router.navigate(['']);
+    // }
     
-    if (destination == 'dragdrop') {
-      this.router.navigate(['/dragdrop']);
-    }
+    // if (destination == 'dragdrop') {
+    //   this.router.navigate(['/dragdrop']);
+    // }
 
-    if (destination == 'quiz') {
-      this.router.navigate(['/quiz']);
-    }
+    // if (destination == 'quiz') {
+    //   this.router.navigate(['/quiz']);
+    // }
 
-    if (destination == 'merch') {
-      this.router.navigate(['/merch']);
-    }
+    // if (destination == 'merch') {
+    //   this.router.navigate(['/merch']);
+    // }
 
-    if (destination == 'cart') {
-      this.router.navigate(['/cart']);
-    }
+    // if (destination == 'cart') {
+    //   this.router.navigate(['/cart']);
+    // }
+    this.router.navigate([route])
   }
 }

@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+button {
+  background-color: #1976D2;
+}
+
+.jumbotron {
+  background-color: white;
+}

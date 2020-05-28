@@ -1,14 +1,14 @@
 <!-- Homepage nav -->
 <div class="navbar-bg">
 
-<button (click)="navigate('')" mat-button>Trees</button>
+  <button (click)="navigateTo('/')" mat-button>TreesForFree</button>
 
   <div class="navbar-items">
-    <button (click)="navigate('')" mat-button>Home</button>
+    <button (click)="navigateTo('/')" mat-button>Home</button>
     <span>|</span>
-    <button (click)="navigate('dragdrop')" mat-button>"Drag n drop"</button>
-    <button (click)="navigate('quiz')" mat-button>"Quiz"</button>
-    <button (click)="navigate('merch')" mat-button>Merch</button>
-    <button (click)="navigate('cart')" mat-button><mat-icon>shopping_cart</mat-icon></button>
+    <button (click)="navigateTo('/dragdrop')" mat-button>Test your knowledge</button>
+    <button (click)="navigateTo('/quiz')" mat-button>Climate Quiz</button>
+    <button (click)="navigateTo('/merch')" mat-button>Merch Shop</button>
+    <button (click)="navigateTo('/cart')" mat-button><mat-icon>shopping_cart</mat-icon></button>
   </div>
 </div>

@@ -8,7 +8,9 @@ import { QuizService } from '../services/quiz.service';
 })
 export class QuizComponent implements OnInit {
 
+  clickUsed = 0;
   questions: any;
+  score = [];
   constructor(private quizService: QuizService) { }
 
   ngOnInit(): void {
@@ -24,11 +26,17 @@ export class QuizComponent implements OnInit {
 
   clickAnswer(answer) {
     if (answer.isCorrect) {
-      alert('answer is correct');
+      this.clickUsed++;
+      this.score.push(this.clickUsed);
+      this.clickUsed = 0;
     } else {
-      alert('answer is worng');
+      this.clickUsed++;
     }
 
+  }
+
+  calccScore() {
+    return this.score.filter((el) => el === 1).length;
   }
 
 }

@@ -1,9 +1,34 @@
-<div *ngFor="let question of questions">
-
-    <div>
-        <h3>{{question.Question}}</h3>
-        <div class="flex" *ngFor="let answer of question.answers">
-            <p (click)="clickAnswer(answer)">{{answer.Answer}}</p>
-        </div>
+  <div>
+    <div >
+      <mat-card >
+        <h1 >Here's the rules</h1>
+        <mat-card-content>
+          <p class="rules">
+            In this quiz can you test your knowledge about the climate. You task is to click on the answer you think is correct.
+            If you get a question correct you score will increment by one.
+          </p>
+        </mat-card-content>
+      </mat-card>
     </div>
-</div>
+
+
+
+<mat-list class="container">
+
+<mat-list-item *ngFor="let question of questions">
+
+    <mat-card class="card">
+    <h3 matLine>{{question.Question}}</h3>
+    <div class="flex" *ngFor="let answer of question.answers">
+    <p matLine (click)="clickAnswer(answer)">{{answer.Answer}}</p>
+    </div>
+    
+    </mat-card>
+
+
+
+
+</mat-list-item>
+</mat-list>
+
+<h3 class="pushDown">Your score {{calccScore()}} out off {{questions.length}}</h3>

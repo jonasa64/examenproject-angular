@@ -13,5 +13,34 @@ h3 {
     background-color: green;
 }
 
+.pushDown{
+    margin-bottom: 15.2%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+h3, h1{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+
+.card{
+    width: 50%;
+    margin: 10px auto;
+    display: inline-block;
+}
+
+
+
+h1, .rules{
+    text-align: center;
+}
+
+
 
 

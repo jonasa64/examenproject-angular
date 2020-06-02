@@ -1,6 +1,8 @@
 <div>
   <h1 class="header">Test your knowledge</h1>
-
+  <div #flash class="alert alert-success" *ngIf="endGame()">
+<p>Game completed</p>
+</div>
   <div class="box">
     <div class="left-box">
       <mat-card class="example-card">
@@ -15,9 +17,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-<div class="alert alert-success" *ngIf="endGame()">
-<p>Game completed</p>
-</div>
+
     <div class="right-box">
       <mat-card class="example-card">
         <mat-card-content>

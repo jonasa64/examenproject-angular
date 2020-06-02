@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { countUpTimerConfigModel, timerTexts, CountupTimerService } from 'ngx-timer';
 import { DragAndDropService } from '../services/drag-and-drop.service';
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./drag-drop.component.css']
 })
 export class DragDropComponent implements OnInit {
+
+  @ViewChild('flash') elem: ElementRef;
 
 
   itemsSolutions = [];
@@ -25,7 +27,7 @@ export class DragDropComponent implements OnInit {
 
   testConfig;
 
-  constructor(private countUpTimer: CountupTimerService, private dragAndDrop: DragAndDropService, private router: Router) { }
+  constructor(private countUpTimer: CountupTimerService, private dragAndDrop: DragAndDropService, private router: Router, private renderer2: Renderer2, private el: ElementRef) { }
 
   ngOnInit(): void {
 
@@ -74,9 +76,16 @@ export class DragDropComponent implements OnInit {
   endGame() {
     if (this.solutions.length === 3 && this.consequences.length === 3) {
       this.pauseTimer();
+      this.removeFlash();
       return true;
     }
     return false;
+  }
+
+  removeFlash() {
+    setTimeout(() => {
+      this.renderer2.removeChild(this.el.nativeElement, this.elem.nativeElement);
+    }, 2000)
   }
 
 }

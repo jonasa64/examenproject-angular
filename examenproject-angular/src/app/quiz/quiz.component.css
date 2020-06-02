@@ -30,7 +30,7 @@ h3, h1{
 }
 
 .card{
-    width: 50%;
+    width: 100%;
     margin: 10px auto;
     display: inline-block;
 }

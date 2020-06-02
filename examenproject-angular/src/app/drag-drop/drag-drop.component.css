@@ -13,11 +13,19 @@ example-container {
 }
 
 .test {
-  width: 30%;
+  width:30%;
 }
 
 .left {
   margin-left: 10px;
+}
+
+.right{
+  margin-left: 80px;
+}
+
+.last{
+  margin-right: 60px;
 }
 
 countup-timer{
@@ -114,6 +122,7 @@ button {
 
 .box {
   display: inline-flex;
+
 }
 
 .right-box,

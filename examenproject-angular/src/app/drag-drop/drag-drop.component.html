@@ -32,7 +32,7 @@
 <br><br><br><br>
 
 <div class="flex">
-  <div class="test">
+  <div class="test right">
     <h2>Statements</h2>
     <div cdkDropList #itemsSolutionsList="cdkDropList" [cdkDropListData]="itemsSolutions"
       [cdkDropListConnectedTo]="[solutionsList]" (cdkDropListDropped)="drop($event)" class="example-list">
@@ -50,16 +50,16 @@
     <div cdkDropList #solutionsList="cdkDropList" [cdkDropListData]="solutions"
       [cdkDropListConnectedTo]="[itemsSolutionsList]" (cdkDropListDropped)="drop($event)" class="example-list">
 
-      <div *ngFor="let item of solutions" class="example-box">{{item}}</div>
+      <div *ngFor="let item of solutions" class="example-box">{{item.question}}</div>
     </div>
   </div>
 
-  <div class="test left">
+  <div class="test left last" >
     <h2>Consequences by the climate changes</h2>
     <div cdkDropList #ConsequencesList="cdkDropList" [cdkDropListData]="consequences"
       [cdkDropListConnectedTo]="[itemsConsequencesList]" (cdkDropListDropped)="drop($event)" class="example-list">
 
-      <div *ngFor="let item of consequences " class="example-box">{{item}}</div>
+      <div *ngFor="let item of consequences " class="example-box">{{item.question}}</div>
     </div>
 
   </div>

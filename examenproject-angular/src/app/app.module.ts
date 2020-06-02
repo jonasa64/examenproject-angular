@@ -26,6 +26,7 @@ import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MerchService } from './services/merch.service'
+import { FlashMessageModule } from 'angular-flash-message';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { MerchService } from './services/merch.service'
       { path: 'quiz', component: QuizComponent },
       { path: 'merch', component: MerchComponent },
       { path: 'cart', component: CartComponent },
-      { path: '**', redirectTo: 'home' }])
+      { path: '**', redirectTo: 'home' }]),
 
   ],
   providers: [DragAndDropService, QuizService, MerchService],

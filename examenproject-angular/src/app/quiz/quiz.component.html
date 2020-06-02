@@ -13,7 +13,10 @@
 
 
 
+<p #elem [ngClass]="{'alert alert-danger' : message === 'worng answer', 'alert alert-success' : message === 'answer is corret'}">{{this.message}}</p>
+
 <mat-list class="container">
+
 
 <mat-list-item *ngFor="let question of questions">
 
@@ -27,8 +30,9 @@
 
 
 
-
 </mat-list-item>
 </mat-list>
 
-<h3 class="pushDown">Your score {{calccScore()}} out off {{questions.length}}</h3>
+  
+
+<h3 class="pushDown" [ngClass]="{'alert alert-danger': calccScore() === 0, 'alert alert-success': calccScore() === 2, 'alert alert-warning': calccScore() === 1 }">Your score {{calccScore()}} out off {{questions.length}}</h3>

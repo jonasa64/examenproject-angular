@@ -71,4 +71,12 @@ export class DragDropComponent implements OnInit {
     return this.countUpTimer.pauseTimer();
   }
 
+  endGame() {
+    if (this.solutions.length === 3 && this.consequences.length === 3) {
+      this.pauseTimer();
+      return true;
+    }
+    return false;
+  }
+
 }

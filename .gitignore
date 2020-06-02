@@ -1,9 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
+/examenproject-angular/dist
 /tmp
 /out-tsc
+/examenproject-angular/firebase.json
+/examenproject-angular/.firebaserc
 # Only exists if Bazel was run
 /bazel-out
 

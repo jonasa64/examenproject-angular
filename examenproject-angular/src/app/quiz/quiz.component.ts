@@ -11,6 +11,7 @@ export class QuizComponent implements OnInit {
   questions: any;
   score = [];
   @ViewChild('elem') elem: ElementRef;
+  @ViewChild('elem2') elem2: ElementRef;
 
   constructor(private quizService: QuizService, private renderer2: Renderer2, private el: ElementRef) { }
 
@@ -39,7 +40,7 @@ export class QuizComponent implements OnInit {
       setTimeout(() => {
         this.message = 'worng answer';
       }, 100);
-      this.remove();
+      this.remove2();
     }
 
   }
@@ -51,9 +52,16 @@ export class QuizComponent implements OnInit {
 
   remove() {
     setTimeout(() => {
-      this.renderer2.removeChild(this.el.nativeElement, this.elem.nativeElement);
+      this.renderer2.addClass(this.elem.nativeElement, 'hide');
     }, 2000)
   }
 
+
+
+  remove2() {
+    setTimeout(() => {
+      this.renderer2.addClass(this.elem2.nativeElement, 'hide');
+    }, 2000)
+  }
 
 }

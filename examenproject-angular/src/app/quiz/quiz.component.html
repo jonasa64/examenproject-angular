@@ -12,9 +12,12 @@
     </div>
 
 
-
-<p #elem [ngClass]="{'alert alert-danger' : message === 'worng answer', 'alert alert-success' : message === 'answer is corret'}">{{this.message}}</p>
-
+<div *ngIf="message === 'answer is corret'">
+<p #elem [ngClass]="{'alert alert-success' : message === 'answer is corret'}">{{this.message}}</p>
+</div>
+<div *ngIf="message === 'worng answer'">
+<p #elem2 [ngClass]="{'alert alert-danger' : message === 'worng answer'}">{{this.message}}</p>
+</div>
 <mat-list class="container">
 
 

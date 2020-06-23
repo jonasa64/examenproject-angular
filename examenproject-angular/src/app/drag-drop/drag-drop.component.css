@@ -45,15 +45,19 @@ button {
 
 .yellow {
   background-color: #ffea00;
+  margin-left: 195px;
 }
 
 .green {
   background: #4b8b3b;
+margin-left: 195px;
 }
 
 .red {
   background-color: #FF3232;
+margin-left: 195px;
 }
+
 
 .yellow,
 .red,
@@ -122,6 +126,7 @@ button {
 
 .box {
   display: inline-flex;
+  margin-top: 25px;
 
 }
 
@@ -129,4 +134,8 @@ button {
 .left-box {
   width: 50%;
   margin: 0 auto;
+}
+
+.leaderbord{
+  margin-left: 83px;
 }

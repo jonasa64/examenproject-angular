@@ -7,7 +7,8 @@ const httpOptions = {
     })
 }
 
-Injectable()
+@Injectable()
+
 export class LeaderbordService {
     dragDropUrl = 'https://exam-backend-web.herokuapp.com/leaderbord/dragdrop'
     quizUrl = 'https://exam-backend-web.herokuapp.com/leaderbord/quiz'

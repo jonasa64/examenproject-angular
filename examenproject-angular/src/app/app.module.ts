@@ -10,7 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule, MatCard } from '@angular/material/card';
 import { RouterModule, Routes } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,8 +28,10 @@ import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MerchService } from './services/merch.service'
+import { LeaderbordService } from './services/leaderbodrd.service';
 import { FlashMessageModule } from 'angular-flash-message';
-
+import { DragDropLeaderbordComponent } from './drag-drop/leaderbord/leaderbord.component';
+import { SortByPipe } from './drag-drop/leaderbord/leaderbord.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,9 @@ import { FlashMessageModule } from 'angular-flash-message';
     CartComponent,
     MerchComponent,
     ConfirmationComponent,
-    MerchComponent
+    MerchComponent,
+    DragDropLeaderbordComponent,
+    SortByPipe
 
   ],
 
@@ -56,6 +62,11 @@ import { FlashMessageModule } from 'angular-flash-message';
     MatCardModule,
     HttpClientModule,
     MatListModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot([
       { path: '', component: FrontPageComponent },
       { path: 'dragdrop', component: DragDropComponent },
@@ -65,7 +76,7 @@ import { FlashMessageModule } from 'angular-flash-message';
       { path: '**', redirectTo: 'home' }]),
 
   ],
-  providers: [DragAndDropService, QuizService, MerchService],
+  providers: [DragAndDropService, QuizService, MerchService, LeaderbordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

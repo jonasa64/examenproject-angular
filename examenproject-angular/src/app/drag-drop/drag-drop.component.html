@@ -3,6 +3,9 @@
   <div #flash class="alert alert-success" *ngIf="endGame()">
 <p>Game completed</p>
 </div>
+
+<app-drag-drop-leaderbord class="leaderbord" [time]="time" *ngIf="endGame()"></app-drag-drop-leaderbord>
+
   <div class="box">
     <div class="left-box">
       <mat-card class="example-card">
@@ -20,11 +23,11 @@
 
     <div class="right-box">
       <mat-card class="example-card">
-        <mat-card-content>
+        <mat-card-content id="container">
           <countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
-          <button mat-button class="green" (click)="startTime()">Start time</button>
-          <button mat-button class="yellow" (click)="pauseTimer()">Pause time</button>
-          <button mat-button class="red" (click)="reset()">Reset game</button>
+          <button *ngIf="!endGame() && !isgameStarted" mat-button class="green" (click)="startTime()">Start time</button>
+           <button *ngIf="!endGame() && isgameStarted" mat-button class="yellow" (click)=" pauseTimer()">Pause time</button>
+          <button *ngIf="endGame()" mat-button class="red" (click)="reset()">Reset game</button>
         </mat-card-content>
       </mat-card>
     </div>

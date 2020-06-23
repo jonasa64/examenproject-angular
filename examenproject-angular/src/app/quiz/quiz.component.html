@@ -18,6 +18,8 @@
 <div *ngIf="message === 'worng answer'">
 <p #elem2 [ngClass]="{'alert alert-danger' : message === 'worng answer'}">{{this.message}}</p>
 </div>
+
+<app-drag-drop-leaderbord [score]="calccScore()" *ngIf="score.length == 2"></app-drag-drop-leaderbord>
 <mat-list class="container">
 
 

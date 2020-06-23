@@ -1,0 +1,61 @@
+<button (click)="showDialog()"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Launch leaderbord modal
+</button>
+<ng-container #vc></ng-container>
+<ng-template #modal_1>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+                            <h4 class="modal-title" id="myModalLabel"> leaderbord
+                            </h4>
+                        </div>
+                        <div class="modal-body"> 
+                        
+                        <p *ngIf="href == '/dragdrop'">Your time is {{time.hours + " hours " + time.mins + " Minutes " + time.seconds + " Seconds"}}</p>
+                          <p *ngIf="href == '/quiz'">Your score is {{score}}</p>
+                       <div *ngIf="href == '/dragdrop'" >
+                          <mat-card >
+                        <h1 >Leaderbord</h1>
+                       <div *ngFor="let item of dragDrop | sortBy:'asc':'Time'">
+                          <mat-card-content>
+                       <p>Username {{item.Username}}  time {{item.Time}}</p>
+                           </mat-card-content>
+                       </div>
+                       </mat-card >
+                       </div>
+
+                            <div *ngIf="href == '/quiz'" >
+                           <mat-card >
+                        <h1 >Leaderbord</h1>
+                       <div *ngFor="let item of Quiz | sortBy:'desc':'Score'">
+                     
+                        <mat-card-content>
+                     
+                             <p>Username {{item.Username}}  Score {{item.Score}}</p>
+                   
+                        </mat-card-content>
+                            
+                    
+
+                       </div>
+                       </mat-card>
+                       </div>
+                        <form [formGroup]="form">
+                            <mat-form-field >
+                                <mat-label>Your nickname</mat-label>
+                                <input matInput formControlName="username">
+                            </mat-form-field>
+                            <button class="btn btn-primary" (click)="submit()">Add to leaderbord</button>
+                        </form>
+                         </div>
+                        <div class="modal-footer"> 
+                            <button  type="button" class="btn btn-default" data-dismiss="modal" (click)="closeDialog()">Close </button> 
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
+
+</ng-template>

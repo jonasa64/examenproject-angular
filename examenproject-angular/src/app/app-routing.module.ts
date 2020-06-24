@@ -8,6 +8,9 @@ import { QuizComponent } from './quiz/quiz.component';
 import { CartComponent } from './cart/cart.component';
 import { MerchComponent } from './merch/merch.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent},
@@ -15,8 +18,10 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent},
   { path: 'merch', component: MerchComponent},
   { path: 'cart', component: CartComponent},
-  { path: 'confirmation', component: ConfirmationComponent},
-  { path: '**', redirectTo: '' }
+  { path: 'login', component: LoginComponent},
+  { path: 'admin', component: AdminComponent},
+  { path: 'edit/:id', component: EditComponent},
+  { path: 'confirmation', component: ConfirmationComponent}
 ];
 
 @NgModule({

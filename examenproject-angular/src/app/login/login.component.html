@@ -1,0 +1,27 @@
+<h1>Login</h1>
+
+<div class="box">
+  <div class="d-flex p-2 justify-content-center mt-5">
+    <form>
+      <div class="card bg-light mb-3 " style="max-width: 18rem;">
+        <div>
+          <div class="card-header">
+            <label for="username"><strong>Admin login</strong></label>
+          </div>
+          <div class="card-body">
+            <input type="text" id="username" placeholder="Username" />
+          </div>
+        </div>
+        <div>
+          <div class="card-body">
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+        </div>
+
+        <button class="btn btn-primary button" type="submit" [routerLink]="['/admin']">
+          <span class="text-button">Login</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

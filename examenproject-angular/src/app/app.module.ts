@@ -33,6 +33,10 @@ import { FlashMessageModule } from 'angular-flash-message';
 import { DragDropLeaderbordComponent } from './drag-drop/leaderbord/leaderbord.component';
 import { SortByPipe } from './drag-drop/leaderbord/leaderbord.pipe';
 
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { EditComponent } from './edit/edit.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +50,10 @@ import { SortByPipe } from './drag-drop/leaderbord/leaderbord.pipe';
     ConfirmationComponent,
     MerchComponent,
     DragDropLeaderbordComponent,
-    SortByPipe
+    SortByPipe,
+    LoginComponent,
+    AdminComponent,
+    EditComponent
 
   ],
 
@@ -62,18 +69,21 @@ import { SortByPipe } from './drag-drop/leaderbord/leaderbord.pipe';
     MatCardModule,
     HttpClientModule,
     MatListModule,
-    ReactiveFormsModule,
     FormsModule,
-    MatIconModule,
-    MatFormFieldModule,
+    RouterModule,
+    ReactiveFormsModule,
     MatInputModule,
-    RouterModule.forRoot([
-      { path: '', component: FrontPageComponent },
-      { path: 'dragdrop', component: DragDropComponent },
-      { path: 'quiz', component: QuizComponent },
-      { path: 'merch', component: MerchComponent },
-      { path: 'cart', component: CartComponent },
-      { path: '**', redirectTo: 'home' }]),
+    MatFormFieldModule,
+    // FlashMessageModule,
+    // RouterModule.forRoot([
+    //   { path: '', component: FrontPageComponent },
+    //   { path: 'dragdrop', component: DragDropComponent },
+    //   { path: 'quiz', component: QuizComponent },
+    //   { path: 'merch', component: MerchComponent },
+    //   { path: 'cart', component: CartComponent },
+    //   { path: 'login', component: LoginComponent },
+    //   { path: 'admin', component: AdminComponent },
+    //   { path: '**', redirectTo: 'home' }]),
 
   ],
   providers: [DragAndDropService, QuizService, MerchService, LeaderbordService],

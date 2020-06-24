@@ -1,0 +1,49 @@
+.header,
+.subheader {
+  text-align: center;
+}
+
+.header {
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.subheader,
+.green {
+  color: #4b8b3b;
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+}
+
+.mat-list-base {
+  display: flex;
+}
+
+.mat-list-item-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mat-list.mat-list-base.flex {
+  margin-bottom: 7rem;
+}
+
+.mat-focus-indicator.buy-button-text.mat-raised-button.mat-button-base {
+  background-color: #4b8b3b;
+  color: white;
+}
+
+.mat-card.mat-focus-indicator {
+  text-align: center;
+}
+
+.mat-line.title {
+  margin-top: 1rem;
+}
+
+.mat-focus-indicator.buy-button-text.mat-raised-button.mat-button-base {
+  margin-bottom: 1rem;
+}

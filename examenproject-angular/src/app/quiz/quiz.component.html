@@ -1,43 +1,52 @@
+<div>
   <div>
-    <div >
-      <mat-card >
-        <h1 >Here's the rules</h1>
-        <mat-card-content>
-          <p class="rules">
-            In this quiz can you test your knowledge about the climate. You task is to click on the answer you think is correct.
-            If you get a question correct you score will increment by one.
-          </p>
-        </mat-card-content>
+    <h1 class="header">Climate Quiz</h1>
+    <div class="box">
+      <div class="left-box">
+        <mat-card class="example-card">
+          <h1 class="instructions">Here's the rules</h1>
+          <mat-card-content>
+            <p>
+              In this quiz can you test your knowledge about the climate. You task is to click on the answer you
+              think is correct.
+              If you get a question correct you score will increment by one.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="right-box">
+        <mat-card class="example-card">
+          <mat-card-content>
+            <h3 class="pushDown"
+              [ngClass]="{'alert alert-danger': calccScore() === 0, 'alert alert-success': calccScore() === 2, 'alert alert-warning': calccScore() === 1 }">
+              Your score is {{calccScore()}} out of {{questions.length}}
+            </h3>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <div *ngIf="message === 'answer is corret'">
+    <p #elem [ngClass]="{'alert alert-success' : message === 'answer is corret'}">{{this.message}}</p>
+  </div>
+  <div *ngIf="message === 'worng answer'">
+    <p #elem2 [ngClass]="{'alert alert-danger' : message === 'worng answer'}">{{this.message}}</p>
+  </div>
+
+  <app-drag-drop-leaderbord [score]="calccScore()" *ngIf="score.length == 2"></app-drag-drop-leaderbord>
+
+  <mat-list class="container">
+    <mat-list-item *ngFor="let question of questions">
+      <mat-card class="card">
+        <h3 matLine>{{question.Question}}</h3>
+        <div class="flex" *ngFor="let answer of question.answers">
+          <p matLine (click)="clickAnswer(answer)">{{answer.Answer}}</p>
+        </div>
       </mat-card>
-    </div>
-
-
-<div *ngIf="message === 'answer is corret'">
-<p #elem [ngClass]="{'alert alert-success' : message === 'answer is corret'}">{{this.message}}</p>
+    </mat-list-item>
+  </mat-list>
 </div>
-<div *ngIf="message === 'worng answer'">
-<p #elem2 [ngClass]="{'alert alert-danger' : message === 'worng answer'}">{{this.message}}</p>
-</div>
-
-<app-drag-drop-leaderbord [score]="calccScore()" *ngIf="score.length == 2"></app-drag-drop-leaderbord>
-<mat-list class="container">
-
-
-<mat-list-item *ngFor="let question of questions">
-
-    <mat-card class="card">
-    <h3 matLine>{{question.Question}}</h3>
-    <div class="flex" *ngFor="let answer of question.answers">
-    <p matLine (click)="clickAnswer(answer)">{{answer.Answer}}</p>
-    </div>
-    
-    </mat-card>
-
-
-
-</mat-list-item>
-</mat-list>
-
-  
-
-<h3 class="pushDown" [ngClass]="{'alert alert-danger': calccScore() === 0, 'alert alert-success': calccScore() === 2, 'alert alert-warning': calccScore() === 1 }">Your score {{calccScore()}} out off {{questions.length}}</h3>
